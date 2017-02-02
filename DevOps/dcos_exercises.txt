@@ -1,0 +1,25 @@
+DevOps – exercises 
+
+
+1. Create account on Docker Hub.
+2. Create public repository hello_yourname in github
+3. Install docker on your laptop
+4. Create “http hello YourName” docker image. (see: http://nmajor.com/your-first-docker-image/  replace “Hello World!” with “Hello YourName!” )
+5. Push configuration for docker image into hello_yourname repository on github
+6. Create public repository “simple” on Docker Hub and connect it with hello_yourname repository. Next build image using Docker Hub platform.
+7. Pull docker image from Docker Hub platform into your laptop and check that it is working
+8. Create trial account on azure ( https://azure.microsoft.com/en-us/free/ ). It’s required credit card information, but you will receive $200 of Azure credits.
+9. Using Azure Portal create “Azure Container Service” DC/OS
+ - One agent and one master
+ - Agent virtual machine size: D2_V2
+10. Connect to the DC/OS UI from your laptop. 
+11. Launch “simple” image from your docker hub public repository on DC/OS using Marathon (examples: https://mesosphere.github.io/marathon/docs/native-docker.html )
+12. Allow to connect  from the Internet to your simple application in DC/OS. 
+ - It should be possible to type in browser url similar to http://yourPrefixagents.westus.cloudapp.azure.com and get “Hello YourName” in response 
+ - this is tricky one. You should configure container service from 9. For example you need to configure Inbound security roles in Network Security Group for dc/os agents
+13.  Create private repository “advanced” on Docker hub and push image “http hello YourName” into  it from your laptop.
+14.  Launch “advanced” image from your docker hub private repository on DC/OS using Marathon (this time use app configuration in marathon: "portMappings": [ { "hostPort": 0, .… )
+in order to run images from private repository you will need to provide credentials for marathon 
+15. Launch marathon-load-balancer in DC/OS.
+16. Allow to connect from the Internet to your advanced application in DC/OS via marathon-load-balancer
+
