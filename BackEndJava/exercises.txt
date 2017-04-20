@@ -21,5 +21,19 @@ In our example there will be two email messages:
 one to jan.kowalski@example.com with title "Interview", email text "simple text"
 second to "anna.zajkowska@example.com" with title "Interview 3", email text "simple text 3"
 
-5. The App should delete automatically messages older than 2 min
+5. The App should delete automatically messages older than 5 min from DB
+
+6. Install docker locally
+
+7. Create Dockerfile for this App
+
+8. Build Docker image with App.jar (when we run docker image, docker should start The App)
+
+9. Create account on Docker Hub
+
+10. Create private repository on Docker Hub 
+
+11. Push docker image with App.jar into private repository on Docker Hub
+
+12. Pull docker image from private repository from Dockery Hub and Run It (check that everything is working as expected)
 
