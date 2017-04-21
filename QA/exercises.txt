@@ -1,0 +1,30 @@
+0) All steps below should be done programmatically
+
+1) Create a team on slack
+
+2) Create two private channels "simple", "advanced"
+
+3)  Into "simple" inset The Complete Works of William Shakespeare
+from https://raw.githubusercontent.com/bbejeck/hadoop-algorithms/master/src/shakespeare.txt
+
+every line as seperate slack message  
+
+4) Into "advanced" as "Code or text snippet":
+title: "Example title"
+type: "Plain Text"
+content: "snippet content snippet content"
+comment: "firts"
+
+5) Into "advanced" upload some txt file with the content:
+---------------------
+AAAAAAAAAAAAAAAAAAAAA
+BBBBBBBBBBBBBBBBBBBBB
+CCCCCCCCCCCCCCCCCCCCC
+---------------------
+
+
+6) create new slack user for your team "second user"
+
+7) add second user to "simple" channel
+
+8) login as second user and check that The Complete Works of William Shakespeare is added
