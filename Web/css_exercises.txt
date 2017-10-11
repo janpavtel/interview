@@ -1,0 +1,12 @@
+*) create copy of the website https://www.wp.pl/
+
+1) create just main page, and one selected subpage
+2) copy (desktop version) should be as similar as it posible to the origin website
+3) copy should work on Firefox and Chrome 
+4) don't use any javascript only plain html + css + sass + images
+5) no framework is allowed (please don't use bootstrap and similar tools)
+6) copy should be responsive
+7) create mobile version of the main page (should work in Chrome on Android)
+ 
+
+
