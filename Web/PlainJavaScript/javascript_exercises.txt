@@ -1,0 +1,42 @@
+1) downloand REST API server: for windows - restserver.exe , for linux - restserver 
+2) run REST API SERVER: for example on linux by ./restserver 
+ This will run API on the port 3000. So you can access aplication via 
+
+API Endpoint
+
+http://localhost:3000/api/v1/companies
+
+GET: get list of companies
+POST: create company
+
+
+http://localhost:3000/api/v1/companies/{name}
+GET: get company
+PUT: update company
+DELETE: remove company
+
+
+Data Structure
+
+{
+  "name": "golang",
+  "tel": "012-345-6789",
+  "email": "golang-nuts@googlegroups.com"
+}
+
+3) Install Postman and check that you can perform GET, POST, DELETE, PUT operation on the above endpoints.
+4) Create simple One Page Application for comany management using JavaScript that store data using REST API SERVER 
+5) Please don't use any libraries for javascript (even jquery is not allowed) only plain javascript
+6) Application should run correctly in Chrome
+7a) Application should allow to create new company
+7b) Add validation: name can't be blank
+7c) Add validation: tel should be correct (only numbers or "-" are allowed and on the beginning can be "+" )
+8) Application should allow modify company information
+9) Application should allow delete company
+10) Application should allow list all companies
+11a) Application should support pagination of the companies (REST API SERVER doesn't support this so Application should perform pagination in memory and display information correctly for the user)
+11b) "fist page" operation should be available
+11c) "next page" operation should be available
+11d) "previous page" operation should be available
+12) Application should allow change the number of items per page (it should be posible to select 1, 2, 5 or 10 items per page)
+
