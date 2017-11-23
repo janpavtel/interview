@@ -1,0 +1,17 @@
+1) create REST API application using Django Rest Framework
+2) application should have model classes: User and Company
+3) User fields: username, password,  list of roles
+4)  Company fields: name, phone , email
+5) users should belong only to one company
+6) should be supported roles: Admin, Manager, Support 
+7a) Admin can create/edit/delete Admins and Managers and Edit Company's phone, email but not names
+7b) Managers can't edit users
+7c) only users with Support role can create new Company
+10) authentication should be jwt based
+11) create additional endpoints /api/init/.... that allows to create initial setup
+12) create init script that will use endpoints /api/init/companies/, /api/init/users/ and create 
+   two companies: 
+       - Support with user Bob (with Support role), 
+       - ABC with two users: Alice (with Admin role),  Frank (with Manager Role)
+13) add tests to the application
+
