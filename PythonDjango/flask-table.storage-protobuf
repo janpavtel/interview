@@ -1,0 +1,39 @@
+# Python - Table Storage - Protobuf 
+
+1. Create account in Azure Portal [https://portal.azure.com/](https://portal.azure.com/) ( credit card required but they provide 300 usd for testing in the first month for free)
+
+2. Create storage account using Azure Portal (the account name is arbitrary )
+
+3. Create two tables storage inside this account: users, messages 
+
+  * users table
+
+    * PartitionKey (type String) should be user’s email
+
+    * info property (type Binary) should contain json 
+
+    * json contains the following information: email, password_hash,  full_name
+
+  * messages table:
+
+    *  PartitionKey and RowKey is your choice
+
+    * details property (type Binary) should contain Protobuf message ([https://developers.google.com/protocol-buffers/docs/pythontutorial](https://developers.google.com/protocol-buffers/docs/pythontutorial)
+
+    * protobuf message should contain the following fields: title - string, content - string, magic_number - integer
+
+4. Create REST API  (should only accept and return json) that allows:
+
+  * create user POST /users    `{"email":"foo@example.com", "password":"xxx", "full_name":"Foo Nowak"}` 
+
+  * delete user DELETE /users/foo@example.com  (it should delete all related messages too )
+
+  * paginate all users in the system GET /users  … 
+
+  * paginate all messages for given user GET /users/foo@example.com/messages 
+
+  * create message for given existing user POST /users/foo@example.com/messages -d `{"title": "Some title", "content": "some content", "magic_number" : 34}`
+
+5. REST API should expose  swagger 
+
+6. REST API please implement using Flask, Flask-restplus
