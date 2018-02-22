@@ -18,10 +18,10 @@
 13) add tests to the application
 14) Install docker locally
 15) Create Dockerfile for this App
-16) Build Docker image with App.jar (when we run docker image, docker should start The App)
+16) Build Docker image with App (when we run docker image, docker should start The App)
 17) Create account on Docker Hub
 18) Create private repository on Docker Hub 
-19) Push docker image with App.jar into private repository on Docker Hub
+19) Push docker image with App into private repository on Docker Hub
 20) Pull docker image from private repository from Dockery Hub and Run It (check that everything is working as expected)
 
 
