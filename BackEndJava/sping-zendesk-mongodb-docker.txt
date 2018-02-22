@@ -1,0 +1,29 @@
+Java - Spring - MongoDB - ZenDesk
+1. Create account in ZenDesk (zendesk.com) 
+2. Create two Views in ZenDesk : Messages ,  Users
+3. Create REST API application using Spring-Boot, MongoDB, Maven, Java 8
+	1. Application should allow to create users: POST /api/users   -d `{"email":"bob@example", "name": "Bob Nowak", age: 34}`   
+		1. User should be saved into MongoDB and 
+		2. should be created ticket in ZenDesk in Users’ View  ticket title: Bob Nowak - new user
+	2. Application should allow to paginate users: GET /api/users 
+	3. Application should allow to  create message: POST /api/messages -d `{"email":"jan.kowalski@example.com", "title":"Interview", "content": "simple text, "magic_number":101}`   
+		1. Message should be saved in MongoDB and
+		2. ticket should be created in ZenDesk in Messages’ View, ticket title: Interview - jan.kowalski@example.com 
+	4. Application should allow to send message: POST /api/send -d `{"magic_number":101}` 
+		1. Should send all messages with given magic_number and delete them from database 
+	5. The Application should delete automatically messages older than 10 min from database. 
+	6. Application usage example
+		* curl -X POST localhost:8080/api/message -d '{"email":"jan.kowalski@example.com","title":"Interview","content":"simple text","magic_number":101}'
+		* curl -X POST localhost:8080/api/message -d '{"email":"jan.kowalski@example.com","title":"Interview 2","content":"simple text 2","magic_number":22}'
+		* curl -X POST localhost:8080/api/message -d '{"email":"anna.zajkowska@example.com","title":"Interview 3","content":"simple text 3","magic_number":101}'
+		* curl -X POST localhost:8080/api/send -d '{"magic_number":101}'
+		* The App should send all messages with given magic_number and delete them from database. In our example there will be two email messages: 
+			* one to jan.kowalski@example.com with title "Interview", email text "simple text" 
+			* second to "anna.zajkowska@example.com" with title "Interview 3", email text "simple text 3"
+	7. Install docker locally
+	8. Create Dockerfile for this App
+	9. Build Docker image with App (when we run docker image, docker should start The App)
+	10. Create account on Docker Hub
+	11. Create private repository on Docker Hub 
+	12. Push docker image with App into private repository on Docker Hub
+	13. Pull docker image from private repository from Docker Hub and Run It (check that everything is working as expected)
